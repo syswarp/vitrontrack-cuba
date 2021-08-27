@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-vitrontrack" insertBefore="administration" caption="mainMsg://menu_config.application-vitrontrack">
+        <item screen="vitrontrack_Contenedores.browse" caption="mainMsg://menu_config.vitrontrack_Contenedores.browse"/>
+        <item screen="vitrontrack_Variedades.browse" caption="mainMsg://menu_config.vitrontrack_Variedades.browse"/>
+        <item screen="vitrontrack_Multiplicaciones.browse"
+              caption="mainMsg://menu_config.vitrontrack_Multiplicaciones.browse"/>
+        <item screen="vitrontrack_Medios.browse" caption="mainMsg://menu_config.vitrontrack_Medios.browse"/>
+        <item screen="vitrontrack_Producciones.browse" caption="mainMsg://menu_config.vitrontrack_Producciones.browse"/>
+    </menu>
+</menu-config>

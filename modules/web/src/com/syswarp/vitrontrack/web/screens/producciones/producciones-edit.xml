@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://produccionesEdit.caption"
+        focusComponent="form"
+        messagesPack="com.syswarp.vitrontrack.web.screens.producciones">
+    <data>
+        <instance id="produccionesDc"
+                  class="com.syswarp.vitrontrack.entity.Producciones">
+            <view extends="_local">
+                <property name="contenedor" view="_minimal"/>
+                <property name="variedad" view="_minimal"/>
+                <property name="multiplicacion" view="_minimal"/>
+                <property name="medios" view="_minimal"/>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="produccionesDc">
+            <column width="350px">
+                <textField id="detalleField" property="detalle"/>
+                <dateField id="fechaField" property="fecha"/>
+                <pickerField id="contenedorField" property="contenedor">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <pickerField id="variedadField" property="variedad">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <pickerField id="multiplicacionField" property="multiplicacion">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <pickerField id="mediosField" property="medios">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

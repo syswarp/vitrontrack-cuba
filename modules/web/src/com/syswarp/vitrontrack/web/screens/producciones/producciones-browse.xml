@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://produccionesBrowse.caption"
+        focusComponent="produccionesesTable"
+        messagesPack="com.syswarp.vitrontrack.web.screens.producciones">
+    <data readOnly="true">
+        <collection id="produccionesesDc"
+                    class="com.syswarp.vitrontrack.entity.Producciones">
+            <view extends="_local">
+                <property name="contenedor" view="_minimal"/>
+                <property name="variedad" view="_minimal"/>
+                <property name="multiplicacion" view="_minimal"/>
+                <property name="medios" view="_minimal"/>
+            </view>
+            <loader id="produccionesesDl">
+                <query>
+                    <![CDATA[select e from vitrontrack_Producciones e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="produccionesesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="produccionesesTable"
+                dataLoader="produccionesesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="produccionesesTable"
+                    width="100%"
+                    dataContainer="produccionesesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+                <action id="refresh" type="refresh"/>
+                <action id="excel" type="excel"/>
+            </actions>
+            <columns>
+                <column id="detalle"/>
+                <column id="fecha"/>
+                <column id="contenedor"/>
+                <column id="variedad"/>
+                <column id="multiplicacion"/>
+                <column id="medios"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="produccionesesTable.create" caption="Nuevo"/>
+                <button id="editBtn" action="produccionesesTable.edit" caption="Editar"/>
+                <button id="removeBtn" action="produccionesesTable.remove" caption="Eliminar"/>
+                <button id="refreshBtn" action="produccionesesTable.refresh" caption="Refrescar"/>
+                <button id="excelBtn" action="produccionesesTable.excel"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

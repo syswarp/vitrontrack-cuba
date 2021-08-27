@@ -1,0 +1,1 @@
+create unique index IDX_VITRONTRACK_MEDIOS_UK_MEDIO on VITRONTRACK_MEDIOS (MEDIO) where DELETE_TS is null ;
