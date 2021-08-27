@@ -1,5 +1,6 @@
 package com.syswarp.vitrontrack.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotNull;
 
 @Table(name = "VITRONTRACK_MEDIOS")
 @Entity(name = "vitrontrack_Medios")
+@NamePattern("%s|medio")
 public class Medios extends StandardEntity {
     private static final long serialVersionUID = -1749988103789855047L;
 

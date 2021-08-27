@@ -41,6 +41,17 @@ public class Producciones extends StandardEntity {
     @JoinColumn(name = "MEDIOS_ID")
     private Medios medios;
 
+    @Column(name = "CANTIDAD")
+    private Integer cantidad;
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
     public Medios getMedios() {
         return medios;
     }

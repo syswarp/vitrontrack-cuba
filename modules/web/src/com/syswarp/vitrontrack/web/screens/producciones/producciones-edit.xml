@@ -46,6 +46,7 @@
                         <action id="clear" type="picker_clear"/>
                     </actions>
                 </pickerField>
+                <textField id="cantidadField" property="cantidad"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

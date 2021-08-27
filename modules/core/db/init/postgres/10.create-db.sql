@@ -65,6 +65,7 @@ create table VITRONTRACK_PRODUCCIONES (
     VARIEDAD_ID uuid not null,
     MULTIPLICACION_ID uuid not null,
     MEDIOS_ID uuid not null,
+    CANTIDAD integer,
     --
     primary key (ID)
 )^

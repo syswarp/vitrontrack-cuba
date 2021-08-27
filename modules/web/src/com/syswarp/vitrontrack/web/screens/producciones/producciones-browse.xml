@@ -12,6 +12,8 @@
                 <property name="variedad" view="_minimal"/>
                 <property name="multiplicacion" view="_minimal"/>
                 <property name="medios" view="_minimal"/>
+                <property name="cantidad"/>
+
             </view>
             <loader id="produccionesesDl">
                 <query>
@@ -46,6 +48,7 @@
                 <column id="variedad"/>
                 <column id="multiplicacion"/>
                 <column id="medios"/>
+                <column id="cantidad"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
